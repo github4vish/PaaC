@@ -62,25 +62,15 @@ node ('build') {
  
  environment {
         scannerHome = tool 'Sonar';
-    //sonar.host.url='http://35.184.137.111:9000/':
+    
     }
     
     withSonarQubeEnv('Sonar') {
-            //sh "${scannerHome}/bin/sonar-scanner"
+            
             sh "mvn clean compile sonar:sonar "
         }
     
-
-    
-// Unable to convert a build step referring to "hudson.plugins.sonar.SonarBuildWrapper". Please verify and convert manually if required.		// Maven build step
-	//withMaven { 
- 	//		if(isUnix()) {
- 		    
- 	//			sh "mvn clean compile sonar:sonar " 
-	//		} else { 
- 	//			bat "mvn clean compile sonar:sonar " 
-	//		} 
- 	//	} 
+ 	
 	}
 }
 node () { 
