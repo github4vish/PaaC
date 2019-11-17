@@ -101,6 +101,7 @@ node ('build') {
  				bat "mvn clean package " 
 			} 
  		} 
+deploy adapters: [tomcat7(credentialsId: 'Tomcat', path: '', url: 'http://35.225.92.53:8888/')], contextPath: '/SpringProject', war: '**/*.war'
 	}
 }
 }
